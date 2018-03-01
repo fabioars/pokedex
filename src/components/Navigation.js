@@ -10,17 +10,17 @@ class Navigation extends Component {
                     <ul className="Navigation__list">
                         <li className="Navigation__item">
                             <Link to="/" className="Navigation__link"> 
-                                <Icon src={require('./navigation/pokeballs.svg')} />
+                                <Icon src={require('./navigation/pokeballs.svg')} atl="My Pokémon" />
                             </Link>
                         </li>
                         <li className="Navigation__item">
                             <Link to="/pokemon" className="Navigation__link">
-                                <Icon src={require('./navigation/pokecoin.svg')} />
+                                <Icon src={require('./navigation/pokecoin.svg')} alt="All Pokémon" />
                             </Link>
                         </li>
                         <li className="Navigation__item">
                             <Link to="/search" className="Navigation__link">
-                                <Icon src={require('./navigation/compass.svg')} />
+                                <Icon src={require('./navigation/compass.svg')} alt="Search for Pokémon" />
                             </Link>
                         </li>
                     </ul>
