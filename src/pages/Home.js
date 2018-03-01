@@ -3,8 +3,10 @@ import React, { Component } from 'react';
 class Home extends Component {
     render() {
         return (
-            <div>
-                Home
+            <div className="App__content">
+                <div className="container">
+                    Home
+                </div>
             </div>
         );
     }

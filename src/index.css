@@ -1,0 +1,87 @@
+body {
+  font-family: sans-serif; }
+
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto; }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  background-color: #E30000;
+  color: #fff;
+  height: 100vh; }
+
+.App__content {
+  flex: 1;
+  overflow: auto; }
+
+.Header {
+  position: relative;
+  background-color: #E30000;
+  color: #fff;
+  border-bottom: 5px solid #88001c;
+  box-shadow: 0 2px 0 #3B000C;
+  margin-bottom: 20px; }
+  .Header:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3B000C; }
+
+.Header__container {
+  display: flex;
+  align-items: center;
+  min-height: 56px; }
+
+.Header__dot {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border-radius: 40px;
+  background-color: #4D8DFF;
+  border: 5px solid #fff;
+  margin-right: 30px;
+  transition: background-color 50ms ease; }
+  .Header__dot:hover {
+    animation: header-dot-animation 500ms ease infinite alternate; }
+  .Header__dot:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.75); }
+
+@keyframes header-dot-animation {
+  from {
+    background-color: #4D8DFF; }
+  to {
+    background-color: #9abeff; } }
+
+.Navigation {
+  position: relative;
+  background-color: #E30000;
+  color: #fff;
+  border-top: 1px solid #88001c;
+  box-shadow: 0 -2px 0 #3B000C;
+  margin-top: 20px; }
+  .Navigation:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3B000C; }
+
+.Navigation__container {
+  display: flex;
+  align-items: center;
+  min-height: 56px; }

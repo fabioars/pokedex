@@ -1,0 +1,28 @@
+
+$color-primary: #E30000
+$color-secondary: #4D8DFF
+$white: #fff
+
+$red-dark: #3B000C
+
+body
+    font-family: sans-serif
+
+.container
+    width: 90%
+    max-width: 960px
+    margin: 0 auto
+    
+.App
+    display: flex
+    flex-direction: column
+    background-color: $color-primary
+    color: $white
+    height: 100vh
+
+.App__content
+    flex: 1
+    overflow: auto
+
+@import 'components/Header'
+@import 'components/Navigation'
