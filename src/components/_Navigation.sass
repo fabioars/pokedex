@@ -19,3 +19,45 @@
     display: flex
     align-items: center
     min-height: 56px
+
+.Navigation__list
+    display: flex
+    width: 100%
+    justify-content: space-between
+    margin: 0 -10px
+    padding: 0
+    list-style: none
+    
+.Navigation__item
+    flex: 1
+
+    &:first-child > .Navigation__link
+        border-top-left-radius: 10px
+        border-bottom-left-radius: 10px
+
+    &:last-child > .Navigation__link
+        border-top-right-radius: 10px
+        border-bottom-right-radius: 10px
+        border-right: none
+
+.Navigation__link
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    min-height: 40px
+    text-transform: uppercase
+    text-decoration: none
+    font-size: 14px
+    color: $white
+    background-color: $color-secondary
+    border-bottom: 3px solid darken($color-secondary, 50%)
+    border-right: 1px solid darken($color-secondary, 50%)
+
+    &:hover
+        background-color: darken($color-secondary, 15%)
+
+    
+.Navigation__icon
+    height: 30px
+    width: auto
