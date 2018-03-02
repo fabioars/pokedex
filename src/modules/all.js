@@ -1,4 +1,5 @@
 import axios from 'axios';
+import iziToast from 'izitoast';
 
 export const FETCH_START = 'all/FETCH_START';
 export const FETCH_FAIL = 'all/FETCH_FAIL';
@@ -46,14 +47,16 @@ export default (state = INIT, action) => {
 
 export const fetchAll = next => async dispatch => {
     dispatch({ type: FETCH_START });
+    try {
+        const result = await axios.get(next);
     
-    const result = await axios.get(next);
-    
-    if (result) {
-        dispatch(fetchSuccess(result.data));
-    } else {
+        if (result) {
+            dispatch(fetchSuccess(result.data));
+        }
+    } catch (error) {
         dispatch(fetchFail());
     }
+    
 };
 
 export const fetchSuccess = list => ({
@@ -61,7 +64,14 @@ export const fetchSuccess = list => ({
     payload: list
 });
 
-export const fetchFail = (error = 'Não foi possível pegar novos Pokémon') => ({
-    type: FETCH_FAIL,
-    payload: error
-});
+export const fetchFail = (error = 'Não foi possível pegar novos Pokémon') => {
+    iziToast.error({
+        title: 'Error',
+        message: error,
+    });
+
+    return {
+        type: FETCH_FAIL,
+        payload: error
+    };
+};

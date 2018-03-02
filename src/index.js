@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import store from './store';
 import Router from './router';
 import 'normalize.css/normalize.css';
+import 'izitoast/dist/css/iziToast.css';
 import './index.css';
 
 const App = () => (
