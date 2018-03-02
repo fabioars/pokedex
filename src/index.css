@@ -194,3 +194,17 @@ body {
   border: 1px solid #001c4d;
   border-bottom-width: 3px;
   border-radius: 10px; }
+
+.Home__clean {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 20px; }
+  .Home__clean > img {
+    width: 100px;
+    height: auto; }
+  .Home__clean > p {
+    color: #622A2D;
+    text-transform: uppercase;
+    font-weight: bold; }
