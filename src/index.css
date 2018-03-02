@@ -22,8 +22,7 @@ body {
   background-color: #E30000;
   color: #fff;
   border-bottom: 5px solid #88001c;
-  box-shadow: 0 2px 0 #3B000C;
-  margin-bottom: 20px; }
+  box-shadow: 0 2px 0 #3B000C; }
   .Header:before {
     content: '';
     position: absolute;
@@ -69,8 +68,7 @@ body {
   background-color: #E30000;
   color: #fff;
   border-top: 1px solid #88001c;
-  box-shadow: 0 -2px 0 #3B000C;
-  margin-top: 20px; }
+  box-shadow: 0 -2px 0 #3B000C; }
   .Navigation:before {
     content: '';
     position: absolute;
@@ -114,11 +112,85 @@ body {
   font-size: 14px;
   color: #fff;
   background-color: #4D8DFF;
-  border-bottom: 3px solid #001c4d;
-  border-right: 1px solid #001c4d; }
+  border-right: 1px solid #001c4d;
+  border-bottom: 3px solid #001c4d; }
   .Navigation__link:hover {
     background-color: #015cff; }
 
 .Navigation__icon {
   height: 30px;
   width: auto; }
+
+.Loading {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 20px auto;
+  background-image: url("./components/loading/pokeball.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain; }
+
+.Loading--play {
+  animation: spin 1s linear infinite; }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(350deg); } }
+
+.All__list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px; }
+
+.All__item {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  min-height: 40px;
+  text-transform: uppercase;
+  background-color: #fff;
+  margin-bottom: 1px;
+  border-radius: 5px;
+  padding: 0 0 0 20px;
+  box-sizing: border-box; }
+
+.All__link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  line-height: 1;
+  color: #4D8DFF; }
+
+.All__add,
+.All__remove {
+  width: 40px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: none;
+  background-color: #4D8DFF;
+  color: #fff;
+  font-size: 26px; }
+
+.All__remove {
+  background-color: #ff6464; }
+
+.All__loadmore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+  min-height: 40px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+  background-color: #4D8DFF;
+  border: 1px solid #001c4d;
+  border-bottom-width: 3px;
+  border-radius: 10px; }

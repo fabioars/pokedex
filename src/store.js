@@ -1,10 +1,10 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import persistState from 'redux-localstorage';
-import app from './modules/app';
+import all from './modules/all';
 
 const reducer = combineReducers({
-    app
+    all
 });
 
 const enhancer = compose(
