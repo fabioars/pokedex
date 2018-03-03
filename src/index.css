@@ -200,11 +200,11 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-top: 20px; }
+  min-height: 80vh; }
   .Home__clean > img {
     width: 100px;
     height: auto; }
   .Home__clean > p {
-    color: #622A2D;
+    color: #36383D;
     text-transform: uppercase;
     font-weight: bold; }

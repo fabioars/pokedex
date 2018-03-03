@@ -2,9 +2,11 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import persistState from 'redux-localstorage';
 import all from './modules/all';
+import pokedex from './modules/pokedex';
 
 const reducer = combineReducers({
-    all
+    all,
+    pokedex
 });
 
 const enhancer = compose(
