@@ -24,6 +24,30 @@ body
     flex: 1
     overflow: auto
 
+.Button
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 0 auto 20px
+    padding: 0 30px
+    min-height: 36px
+    text-align: center
+    min-height: 40px
+    text-transform: uppercase
+    text-decoration: none
+    font-size: 14px
+    color: $white
+    background-color: $color-secondary
+    border: 1px solid darken($color-secondary, 50%)
+    border-bottom-width: 3px
+    border-radius: 10px
+    cursor: pointer
+
+    &:hover
+        background-color: darken($color-secondary, 15%)
+    &:active
+        opacity: .5
+
 @import 'components/Header'
 @import 'components/Navigation'
 @import 'components/Loading'

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as _ from 'underwater/src/es5';
+import iziToast from 'izitoast';
 import { byId } from '../utils';
 
 export const FETCH_START = 'pokdex/FETCH_START';
@@ -54,14 +55,14 @@ export default (state = INIT, action) => {
                 error: true,
                 errorMessage: action.payload
             };
-            
+
         case FETCH_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 error: false,
                 errorMessage: ''
-            }
+            };
 
         default:
             return state;
@@ -72,8 +73,10 @@ export const fetchPokemon = id => async dispatch => {
     dispatch({ type: FETCH_START });
 
     try {
-        const result = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
-    
+        const result = await axios.get(
+            `https://pokeapi.co/api/v2/pokemon/${id}`
+        );
+
         if (result) {
             dispatch(fetchSuccess(result.data));
             dispatch(addPokemon(result.data));
@@ -87,9 +90,16 @@ export const fetchSuccess = () => ({
     type: FETCH_SUCCESS
 });
 
-export const fetchFail = () => ({
-    type: FETCH_FAIL
-});
+export const fetchFail = (error = 'Sorry! Pokémon scaped') => {
+    iziToast.error({
+        title: 'Error',
+        message: error,
+    });
+
+    return {
+        type: FETCH_FAIL
+    };
+};
 
 export const addPokemon = pokemon => ({
     type: ADD,

@@ -17,6 +17,29 @@ body {
   flex: 1;
   overflow: auto; }
 
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  padding: 0 30px;
+  min-height: 36px;
+  text-align: center;
+  min-height: 40px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+  background-color: #4D8DFF;
+  border: 1px solid #001c4d;
+  border-bottom-width: 3px;
+  border-radius: 10px;
+  cursor: pointer; }
+  .Button:hover {
+    background-color: #015cff; }
+  .Button:active {
+    opacity: .5; }
+
 .Header {
   position: relative;
   background-color: #E30000;
@@ -122,6 +145,7 @@ body {
   width: auto; }
 
 .Loading {
+  position: relative;
   display: block;
   width: 30px;
   height: 30px;
@@ -134,11 +158,24 @@ body {
 .Loading--play {
   animation: spin 1s linear infinite; }
 
+.Loading--catch {
+  animation: catch 1s ease-in-out infinite alternate; }
+
 @keyframes spin {
   from {
     transform: rotate(0deg); }
   to {
     transform: rotate(350deg); } }
+
+@keyframes catch {
+  0% {
+    transform: rotate(-30deg); }
+  25% {
+    transform: rotate(0deg); }
+  75% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(30deg); } }
 
 .Item {
   display: flex;
@@ -177,24 +214,6 @@ body {
   padding: 0;
   margin: 10px 0 20px; }
 
-.All__loadmore {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 20px;
-  width: 100%;
-  max-width: 280px;
-  text-align: center;
-  min-height: 40px;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 14px;
-  color: #fff;
-  background-color: #4D8DFF;
-  border: 1px solid #001c4d;
-  border-bottom-width: 3px;
-  border-radius: 10px; }
-
 .All__filter {
   display: flex;
   align-items: center;
@@ -205,12 +224,17 @@ body {
   border-radius: 10px;
   border: 2px solid #4D8DFF; }
 
+.Home__container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; }
+
 .Home__clean {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  min-height: 80vh; }
+  padding-top: 20px; }
   .Home__clean > img {
     width: 100px;
     height: auto; }
@@ -244,20 +268,3 @@ body {
     width: auto;
     filter: grayscale(100%) brightness(0);
     opacity: .5; }
-
-.Pokemon__add {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 20px;
-  padding: 10px 30px;
-  text-align: center;
-  min-height: 40px;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 14px;
-  color: #fff;
-  background-color: #4D8DFF;
-  border: 1px solid #001c4d;
-  border-bottom-width: 3px;
-  border-radius: 10px; }

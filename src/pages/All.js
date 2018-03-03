@@ -68,7 +68,7 @@ class All extends Component {
         } else {
             return (
                 <button
-                    className="All__loadmore"
+                    className="Button"
                     onClick={this.loadmoreClicked}
                 >
                     Load more

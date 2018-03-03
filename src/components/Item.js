@@ -7,9 +7,6 @@ const Item = ({ number, children }) => (
         <Link to={`/pokemon/${number}`} className="Item__link">
             {zeroPad(number, 3)} - {children}
         </Link>
-        
-        <button className="Item__add">+</button>
-        {/* <button className="Item__remove">-</button> */}
     </li>
 );
 

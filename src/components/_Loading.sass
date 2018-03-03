@@ -1,4 +1,5 @@
 .Loading
+    position: relative
     display: block
     width: 30px
     height: 30px
@@ -11,9 +12,26 @@
 .Loading--play
     animation: spin 1s linear infinite
 
+.Loading--catch
+    animation: catch 1s ease-in-out infinite alternate
+
 @keyframes spin
     from 
         transform: rotate(0deg)
 
     to
         transform: rotate(350deg)
+
+@keyframes catch
+    0%
+        transform: rotate(-30deg)
+
+    25%
+        transform: rotate(0deg)
+
+    75%
+        transform: rotate(0deg)
+    
+    100%
+        transform: rotate(30deg)
+        
