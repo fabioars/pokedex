@@ -202,7 +202,8 @@ body {
   margin-bottom: 10px;
   box-sizing: border-box;
   padding: 10px 20px;
-  border-radius: 10px; }
+  border-radius: 10px;
+  border: 2px solid #4D8DFF; }
 
 .Home__clean {
   display: flex;
