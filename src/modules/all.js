@@ -64,7 +64,7 @@ export const fetchSuccess = list => ({
     payload: list
 });
 
-export const fetchFail = (error = 'Não foi possível pegar novos Pokémon') => {
+export const fetchFail = (error = 'Sorry! We can\'t catch them') => {
     iziToast.error({
         title: 'Error',
         message: error,

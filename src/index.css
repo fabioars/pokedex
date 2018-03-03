@@ -140,12 +140,7 @@ body {
   to {
     transform: rotate(350deg); } }
 
-.All__list {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 20px; }
-
-.All__item {
+.Item {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
@@ -157,15 +152,15 @@ body {
   padding: 0 0 0 20px;
   box-sizing: border-box; }
 
-.All__link {
+.Item__link {
   display: flex;
   align-items: center;
   text-decoration: none;
   line-height: 1;
   color: #4D8DFF; }
 
-.All__add,
-.All__remove {
+.Item__add,
+.Item__remove {
   width: 40px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -174,8 +169,13 @@ body {
   color: #fff;
   font-size: 26px; }
 
-.All__remove {
+.Item__remove {
   background-color: #ff6464; }
+
+.All__list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px; }
 
 .All__loadmore {
   display: flex;
@@ -195,6 +195,15 @@ body {
   border-bottom-width: 3px;
   border-radius: 10px; }
 
+.All__filter {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border-radius: 10px; }
+
 .Home__clean {
   display: flex;
   align-items: center;
@@ -208,3 +217,46 @@ body {
     color: #36383D;
     text-transform: uppercase;
     font-weight: bold; }
+
+.Pokemon__out {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  border: 1px dashed rgba(0, 0, 0, 0.5);
+  min-height: 200px; }
+  .Pokemon__out:before {
+    content: '?';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    font-size: 30px; }
+  .Pokemon__out > img {
+    height: 100px;
+    width: auto;
+    filter: grayscale(100%) brightness(0);
+    opacity: .5; }
+
+.Pokemon__add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  padding: 10px 30px;
+  text-align: center;
+  min-height: 40px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+  background-color: #4D8DFF;
+  border: 1px solid #001c4d;
+  border-bottom-width: 3px;
+  border-radius: 10px; }

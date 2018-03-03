@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import All from './pages/All';
-import Search from './pages/Search';
+import Pokemon from './pages/Pokemon';
 
 const Router = () => (
     <BrowserRouter>
@@ -12,7 +12,7 @@ const Router = () => (
             <Header />
             <Route exact path="/" component={Home} />
             <Route exact path="/pokemon" component={All} />
-            <Route exact path="/search" component={Search} />
+            <Route exact path="/pokemon/:id" component={Pokemon} />
             <Navigation />
         </div>
     </BrowserRouter>

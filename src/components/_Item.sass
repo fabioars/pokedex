@@ -1,0 +1,32 @@
+
+.Item
+    display: flex
+    align-items: stretch
+    justify-content: space-between
+    min-height: 40px
+    text-transform: uppercase
+    background-color: $white
+    margin-bottom: 1px
+    border-radius: 5px
+    padding: 0 0 0 20px
+    box-sizing: border-box
+
+.Item__link
+    display: flex
+    align-items: center
+    text-decoration: none
+    line-height: 1
+    color: $color-secondary
+
+.Item__add,
+.Item__remove
+    width: 40px
+    border-top-right-radius: 5px
+    border-bottom-right-radius: 5px
+    border: none
+    background-color: $color-secondary
+    color: $white
+    font-size: 26px
+    
+.Item__remove
+    background-color: lighten($color-primary, 25%)

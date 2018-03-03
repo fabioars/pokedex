@@ -1,0 +1,44 @@
+.Pokemon__out
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 20px 0
+    border: 1px dashed transparentize(#000, .5)
+    min-height: 200px
+    
+    &:before
+        content: '?'
+        display: flex
+        align-items: center
+        justify-content: center
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 2
+        font-size: 30px
+
+    > img
+        height: 100px
+        width: auto
+        filter: grayscale(100%) brightness(0)
+        opacity: .5
+
+.Pokemon__add
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 0 auto 20px
+    padding: 10px 30px
+    text-align: center
+    min-height: 40px
+    text-transform: uppercase
+    text-decoration: none
+    font-size: 14px
+    color: $white
+    background-color: $color-secondary
+    border: 1px solid darken($color-secondary, 50%)
+    border-bottom-width: 3px
+    border-radius: 10px

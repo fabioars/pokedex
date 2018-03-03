@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Item from './all/Item';
+import Item from '../components/Item';
 import Loading from '../components/Loading';
 import { fetchAll } from '../modules/all';
 
 class All extends Component {
+    state = {
+        filter: ''
+    };
     componentWillMount() {
         const { list, next } = this.props;
 
@@ -19,11 +22,31 @@ class All extends Component {
         this.props.fetchAll(next);
     };
 
+    filterHandle = e => {
+        const filter = e.target.value;
+        this.setState({ filter });
+    };
+
     renderList() {
-        const { list } = this.props;
+        const { filter } = this.state;
+
+        const list = this.props.list.filter(pokemon => {
+            const id = pokemon.url.split('/').reverse()[1];
+            return (
+                pokemon.name.toLowerCase().includes(filter.toLowerCase()) ||
+                id.toString().includes(filter)
+            );
+        });
 
         return (
             <ul className="All__list">
+                <input
+                    type="search"
+                    className="All__filter"
+                    placeholder="Filter Pokémon"
+                    onChange={this.filterHandle}
+                />
+
                 {list.map(pokemon => {
                     const id = pokemon.url.split('/').reverse()[1];
 

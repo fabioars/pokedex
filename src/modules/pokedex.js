@@ -9,6 +9,9 @@ export const ADD = 'pokedex/ADD';
 export const REMOVE = 'pokedex/REMOVE';
 
 export const INIT = {
+    loading: false,
+    error: false,
+    errorMessage: '',
     list: []
 };
 
@@ -36,10 +39,57 @@ export default (state = INIT, action) => {
                 })
             };
 
+        case FETCH_START:
+            return {
+                ...state,
+                loading: true,
+                error: false,
+                errorMessage: ''
+            };
+
+        case FETCH_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: true,
+                errorMessage: action.payload
+            };
+            
+        case FETCH_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                error: false,
+                errorMessage: ''
+            }
+
         default:
             return state;
     }
 };
+
+export const fetchPokemon = id => async dispatch => {
+    dispatch({ type: FETCH_START });
+
+    try {
+        const result = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    
+        if (result) {
+            dispatch(fetchSuccess(result.data));
+            dispatch(addPokemon(result.data));
+        }
+    } catch (error) {
+        dispatch(fetchFail());
+    }
+};
+
+export const fetchSuccess = () => ({
+    type: FETCH_SUCCESS
+});
+
+export const fetchFail = () => ({
+    type: FETCH_FAIL
+});
 
 export const addPokemon = pokemon => ({
     type: ADD,
