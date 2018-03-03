@@ -243,6 +243,11 @@ body {
     text-transform: uppercase;
     font-weight: bold; }
 
+.Home__list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px; }
+
 .Pokemon__out {
   position: relative;
   display: flex;
