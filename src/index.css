@@ -301,3 +301,16 @@ body {
   text-align: center;
   margin-bottom: 10px;
   font-weight: 600; }
+
+.Profile__table {
+  width: 100%;
+  margin: 10px auto;
+  background-color: #fff;
+  color: #222;
+  border-radius: 10px;
+  border: 1px solid #001c4d;
+  border-bottom-width: 3px; }
+  .Profile__table tr {
+    border-bottom: 1px solid #ccc; }
+  .Profile__table td {
+    padding: 5px 10px; }
