@@ -2,13 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import OutOfDex from './pokemon/OutOfDex';
 import Profile from './pokemon/Profile';
-import { fetchPokemon } from '../modules/pokedex';
+import { fetchPokemon, removePokemon } from '../modules/pokedex';
 import { findById } from '../utils';
 
 class Pokemon extends Component {
     catchClickHandle = id => {
         this.props.fetch(id);
     };
+
+    releaseClickHandle = id => {
+        console.log(id);
+        this.props.remove(id);
+    }
 
     render() {
         const { id } = this.props.match.params;
@@ -24,7 +29,10 @@ class Pokemon extends Component {
                             onCatchClick={this.catchClickHandle}
                         />
                     ) : (
-                        <Profile pokemon={pokemon} />
+                        <Profile 
+                            pokemon={pokemon} 
+                            onRelase={this.releaseClickHandle}
+                        />
                     )}
                 </div>
             </div>
@@ -45,7 +53,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = {
-    fetch: fetchPokemon
+    fetch: fetchPokemon,
+    remove: removePokemon
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Pokemon);

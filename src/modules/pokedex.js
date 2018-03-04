@@ -36,7 +36,7 @@ export default (state = INIT, action) => {
             return {
                 ...state,
                 list: state.list.filter(pokemon => {
-                    return pokemon.id === action.payload;
+                    return pokemon.id !== action.payload;
                 })
             };
 

@@ -43,8 +43,10 @@ it('Pokédex', () => {
 
     describe('remove pokémon a pokédex', () => {
         expect(
-            reducer({ ...INIT, list: [{ id: 3 }, { id: 4 }] }, removePokemon(4))
-                .list
-        ).toEqual([{ id: 3 }]);
+            reducer(
+                { ...INIT, list: [{ id: 3 }, { id: 4 }, { id: 8 }] },
+                removePokemon(4)
+            ).list
+        ).toEqual([{ id: 3 }, { id: 8 }]);
     });
 });
