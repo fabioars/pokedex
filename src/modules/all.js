@@ -5,7 +5,7 @@ export const FETCH_START = 'all/FETCH_START';
 export const FETCH_FAIL = 'all/FETCH_FAIL';
 export const FETCH_SUCCESS = 'all/FETCH_SUCCESS';
 
-const INIT = {
+export const INIT = {
     loading: false,
     error: false,
     errorMessage: '',
@@ -59,9 +59,9 @@ export const fetchAll = next => async dispatch => {
     
 };
 
-export const fetchSuccess = list => ({
+export const fetchSuccess = payload => ({
     type: FETCH_SUCCESS,
-    payload: list
+    payload
 });
 
 export const fetchFail = (error = 'Sorry! We can\'t catch them') => {

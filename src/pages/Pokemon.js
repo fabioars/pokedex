@@ -43,7 +43,7 @@ class Pokemon extends Component {
 const mapStateToProps = (state, ownProps) => {
     const { id } = ownProps.match.params;
     const { list, loading } = state.pokedex;
-    const { found, result} = findById(list, parseInt(id, 10));
+    const { found, result } = findById(list, parseInt(id, 10));
 
     return {
         isInDex: found,
