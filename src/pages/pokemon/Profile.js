@@ -69,11 +69,11 @@ class Profile extends Component {
 
                 <table className="Profile__table">
                     <tbody>
-                        {[...pokemon.stats].reverse().map(({ stat }) => {
+                        {[...pokemon.stats].reverse().map(({ stat, base_stat }) => {
                             return (
                                 <tr key={stat.name}>
                                     <td>{stat.name.toUpperCase()}</td>
-                                    <td align="right">{stat.base_stat}</td>
+                                    <td align="right">{base_stat}</td>
                                 </tr>
                             );
                         })}
