@@ -317,3 +317,9 @@ body {
     border-bottom: 1px solid #ccc; }
   .Profile__table td {
     padding: 5px 10px; }
+  .Profile__table a {
+    color: #4D8DFF;
+    text-decoration: none; }
+    .Profile__table a:hover {
+      color: #015cff;
+      text-decoration: underline; }

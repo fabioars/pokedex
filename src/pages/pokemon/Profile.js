@@ -11,7 +11,7 @@ class Profile extends Component {
         if (result) {
             console.log(result);
             iziToast.show({
-                message: result.data.short_effect
+                message: result.data.effect_entries[0].short_effect
             });
         }
     };
