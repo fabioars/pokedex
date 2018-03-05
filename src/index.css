@@ -1,6 +1,11 @@
 body {
   font-family: sans-serif; }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
 .container {
   width: 90%;
   max-width: 960px;
@@ -323,3 +328,8 @@ body {
     .Profile__table a:hover {
       color: #015cff;
       text-decoration: underline; }
+
+.Types__list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px; }
