@@ -37,9 +37,9 @@ class Types extends Component {
     }
 
     renderList() {
-        return this.state.list.map(pokemon => {
+        return this.state.list.map(({ pokemon }) => {
             const id = pokemon.url.split('/').reverse()[1];
-
+            
             return (
                 <Item key={id} number={id}>
                     {pokemon.name}
