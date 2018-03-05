@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import iziToast from 'izitoast';
 import { Link } from 'react-router-dom';
 
 class Profile extends Component {
+
+    onAbilityClick = async url => {
+        const result = await axios.get(url);
+
+        if (result) {
+            console.log(result);
+            iziToast.show({
+                message: result.data.short_effect
+            });
+        }
+    };
+
     onRelease = e => {
         e.preventDefault();
         this.props.onRelase(this.props.pokemon.id);
@@ -39,10 +53,13 @@ class Profile extends Component {
                         <tr>
                             <td>{'Type(s)'.toUpperCase()}</td>
                             <td align="right">
-                                {pokemon.types.map(type => {
-                                    const { name } = type.type;
-                                    return (<span key={name}>
-                                        <Link to={`/type/${name}`}>{name.toUpperCase()}</Link>{' '}
+                                {pokemon.types.map(({ type }) => {
+                                    const { name } = type;
+                                    return (
+                                        <span key={name}>
+                                            <Link to={`/type/${name}`}>
+                                                {name.toUpperCase()}
+                                            </Link>{' '}
                                         </span>
                                     );
                                 })}
@@ -53,11 +70,39 @@ class Profile extends Component {
 
                 <table className="Profile__table">
                     <tbody>
-                        {[...pokemon.stats].reverse().map(stats => {
+                        {[...pokemon.stats].reverse().map(({ stat }) => {
                             return (
-                                <tr key={stats.stat.name}>
-                                    <td>{stats.stat.name.toUpperCase()}</td>
-                                    <td align="right">{stats.base_stat}</td>
+                                <tr key={stat.name}>
+                                    <td>{stat.name.toUpperCase()}</td>
+                                    <td align="right">{stat.base_stat}</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
+
+                <table className="Profile__table">
+                    <thead>
+                        <tr>
+                            <th>Abilities</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {pokemon.abilities.map(({ ability }) => {
+                            return (
+                                <tr key={ability.name}>
+                                    <td>
+                                        <a
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                this.onAbilityClick(
+                                                    ability.url
+                                                );
+                                            }}
+                                        >
+                                            {ability.name.toUpperCase()}
+                                        </a>
+                                    </td>
                                 </tr>
                             );
                         })}

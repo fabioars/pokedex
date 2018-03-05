@@ -310,6 +310,9 @@ body {
   border-radius: 10px;
   border: 1px solid #001c4d;
   border-bottom-width: 3px; }
+  .Profile__table th {
+    padding: 5px 10px;
+    text-align: left; }
   .Profile__table tr {
     border-bottom: 1px solid #ccc; }
   .Profile__table td {
