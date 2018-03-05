@@ -11,7 +11,6 @@ class Pokemon extends Component {
     };
 
     releaseClickHandle = id => {
-        console.log(id);
         this.props.remove(id);
     }
 

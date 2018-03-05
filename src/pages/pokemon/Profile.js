@@ -9,7 +9,6 @@ class Profile extends Component {
         const result = await axios.get(url);
 
         if (result) {
-            console.log(result);
             iziToast.show({
                 message: result.data.effect_entries[0].short_effect
             });
