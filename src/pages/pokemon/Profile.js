@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Profile extends Component {
     onRelease = e => {
@@ -25,6 +26,31 @@ class Profile extends Component {
                         </button>
                     </div>
                 </div>
+                <table className="Profile__table">
+                    <tbody>
+                        <tr>
+                            <td>{'Weight'.toUpperCase()}</td>
+                            <td align="right">{pokemon.weight}</td>
+                        </tr>
+                        <tr>
+                            <td>{'Size'.toUpperCase()}</td>
+                            <td align="right">{pokemon.height}</td>
+                        </tr>
+                        <tr>
+                            <td>{'Type(s)'.toUpperCase()}</td>
+                            <td align="right">
+                                {pokemon.types.map(type => {
+                                    const { name } = type.type;
+                                    return (<span key={name}>
+                                        <Link to={`/type/${name}`}>{name.toUpperCase()}</Link>{' '}
+                                        </span>
+                                    );
+                                })}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
                 <table className="Profile__table">
                     <tbody>
                         {[...pokemon.stats].reverse().map(stats => {
