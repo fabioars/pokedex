@@ -5,7 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "classnames": "^2.2.5",
-    "izitoast": "^1.2.0",
+    "izitoast": "^1.4.0",
     "node-sass-chokidar": "^0.0.3",
     "normalize.css": "^8.0.0",
     "npm-run-all": "^4.1.2",

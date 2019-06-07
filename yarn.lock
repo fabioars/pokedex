@@ -3616,9 +3616,9 @@ istanbul-reports@^1.1.4:
   dependencies:
     handlebars "^4.0.3"
 
-izitoast@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/izitoast/-/izitoast-1.2.0.tgz#4a5c796f5483730739bd799645f34c05ca3736c3"
+izitoast@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/izitoast/-/izitoast-1.4.0.tgz#1aa4e3408b7159fba743506af66d8be54fd929fb"
 
 jest-changed-files@^20.0.3:
   version "20.0.3"
